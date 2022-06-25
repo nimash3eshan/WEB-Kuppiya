@@ -1,6 +1,5 @@
 #container {
     color: #768390;
-    background: #FFF;
     font-family: "Effra", Helvetica, sans-serif;
     padding: 0;
     -webkit-font-smoothing: antialiased;
@@ -8,6 +7,9 @@
     display: block;
     width: 90%;
     margin: 100px auto;
+}
+.container-fluid{
+    background-color: white;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -24,7 +26,7 @@ text-decoration: none;
 }
 
 #container .example-header {
-background: #3D4351;
+background: #003f5da6;
 color: #FFF;
 font-weight: 300;
 padding: 3em 1em;

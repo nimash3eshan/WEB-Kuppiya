@@ -181,7 +181,12 @@ nav[role=navigation] li a {
     display: flex;
     flex-direction: column;
     color: #ffffff;
-    background-color: #3498db;
+    background-color: #00405dd6;
     font-size: 20px;
     align-items: center;
+}
+
+pre{
+    background-color: #212529;
+    color: white;
 }

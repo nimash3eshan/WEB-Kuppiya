@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="HTML|CSS|JS KUPPIY">
+    <meta name="author" content="Nimash Eshan">
+		<title>WEB KUPPIYA</title>
+		<link rel="stylesheet" href="../styles/normalize.css">
+		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+        <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/content.css">
+	</head>
+	<body onclick = "refresh()">
+
+    <!--Menu-->
+    <div id="header-nav">
+        <div class="container">
+    <!-- H1 for SEO -->
+        <div class="brand">
+        <a href="#"><h1>WEB කුප්පිය</h1></a>
+        </div>
+        <!-- Small screen menu button -->
+        <a href="#menu" class="menu-link">
+        <span class="bar1"></span>
+        <span class="bar2"></span>
+        <span class="bar3"></span>
+        </a>
+        <!-- /Small screen menu button -->
+        
+        <!-- Menu Items -->
+        <nav id="menu" role="navigation">
+                <ul>
+                    <li><a href="../index.html">Content</a></li>
+                    <li><a href="./Live editor.html">PlayGround</a></li>
+                </ul>
+            </nav>
+        <!-- /Menu Items -->
+        </div>
+        </div>
+    <!-- /Menu -->
+    
+	<!-- body -->
+
+<div id="container">
+<header class="example-header">
+    <h1 class="text-center">...............</h1>
+    <h1>04 | Meta HTML</h1>
+</header>
+<div class="container-fluid">
+<br> 
+<br>
+<h1>Meta HTML</h1>
+<p>
+    So far we've just shown you HTML that produces something concrete, something visual. We now need to talk about HTML that you still need but it won't produce visual things.
+</p><br>
+<p>
+    Let's start with the absolute basic foundations for an HTML page. Like a house needs a foundation, your HTML document needs a basic framework to get up and going.
+</p>
+
+<div class="main-mirror" style="padding-top: 5px;">
+<textarea id="editor-textarea" onkeyup = "refresh()" style="height: 330px;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My First HTML Document</title>
+</head>
+<body>
+
+<h2>Check this out</h2>
+
+</body>
+</html>
+</textarea>
+<iframe id="viewer" style="height: 330px; float: none;"></iframe>
+</div> <!--main mirror-->
+
+<br><br><br>
+<p>This is about as barebones as you get. Let's dissect it point-by-point.</p>
+<pre style="font-size: 2rem;">&lt;!DOCTYPE html&gt;</pre>
+<p>HTML is an old language. It was invented in 1993! While I'm sure the originators and the early adopters of HTML did their best to make they could, there's no way they could have anticipated that we'd still be using it 25 years and they needs we'd have. As such, HTML has had to evolve in many unexpected ways and part of that is removing bad parts and mistakes that used to HTML as we go along. When they remove bad stuff and add good stuff, they make a new version of HTML. The way we tell the browser that's reading the HTML what version of HTML we're using is this first tag. This particular one is for HTML5, the latest (as of writing) revision of HTML. HTML doesn't get revised very often so this will be the header you'll use for a long time to come.</p>
+<pre style="font-size: 2rem;">&lt;html lang="en"&gt;&lt;/html&gt;</pre>
+<p>Everything (besides the doctype) goes into your <b>html</b> tag. You'll wrap everything in here. You also should give it a language attribute to let the browser know what language your document is in which is what the <b>lang="en"</b> is communicating. This is useful to the browser to know for a number of reasons.</p>
+<pre style="font-size: 2rem;">&lt;head&gt;&lt;/head&gt;</pre>
+<p>First, there's <b>&lt;head&gt;&lt;/head&gt;</b> and also <b>&lt;header&gt;&lt;/header&gt;</b> and they are different. Be careful about that. We're talking about <b>&lt;head&gt;&lt;/head&gt;</b>.
+We'll first talk about head. Inside of head goes all of the meta-data to help the browser understand how to read your document. In our case, the only thing we're putting in head is the title of the document. What goes inside of <b>title</b> is what will the name of the tab of the browser. It's also the name of the Google or Bing search result. Basically, anywhere that's going to display the title of the web page will use what's inside of here. This is the theme of what goes in <b>head: </b>data that's useful for reasons other than displaying it. We can put a tag in here that prevents pinch-to-zoom on mobile if we needed that (don't do that!) We can put a tag that identifies the description and image that Google would use for search results. We'll see some more later but for now we'll stick with just a title.</p>
+
+<pre style="font-size: 2rem;">&lt;body&gt;&lt;/body&gt;</pre>
+<p>All of our "visual" HTML will go in here. All your <b> divs, spans, imgs,</b> etc.</p>
+
+</div> <!--container-fluid--> <b></b>
+
+<div class="foot2">
+    <a href="./2.html"> << Lesson 03 | Basic HTML</a>  
+    <a href="./3.html"> >> Lesson 04 | Meta HTML</a>  
+</div>		
+
+<script src="../JavaScript/jquery-3.6.0.min.js"></script>
+<script src="../JavaScript/app.js"></script>
+</body>
+</html>
