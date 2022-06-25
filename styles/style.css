@@ -32,7 +32,7 @@ p{
     background: black;
     color: #fefefe;
     resize: none;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 #viewer{
     background: white;
@@ -189,4 +189,10 @@ nav[role=navigation] li a {
 pre{
     background-color: #212529;
     color: white;
+    font-size: 2rem;
+}
+mark{
+    background: #8cff6d;
+    color: black;
+    border-radius: 20%;
 }

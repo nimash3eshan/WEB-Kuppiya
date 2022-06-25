@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="HTML|CSS|JS KUPPIY">
+    <meta name="author" content="Nimash Eshan">
+		<title>WEB KUPPIYA - Basic CSS</title>
+		<link rel="stylesheet" href="../styles/normalize.css">
+		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+        <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/content.css">
+	</head>
+	<body onclick = "refresh()">
+
+    <!--Menu-->
+    <div id="header-nav">
+        <div class="container">
+    <!-- H1 for SEO -->
+        <div class="brand">
+        <a href="#"><h1>WEB කුප්පිය</h1></a>
+        </div>
+        <!-- Small screen menu button -->
+        <a href="#menu" class="menu-link">
+        <span class="bar1"></span>
+        <span class="bar2"></span>
+        <span class="bar3"></span>
+        </a>
+        <!-- /Small screen menu button -->
+        
+        <!-- Menu Items -->
+        <nav id="menu" role="navigation">
+                <ul>
+                    <li><a href="../index.html">Content</a></li>
+                    <li><a href="./Live editor.html">PlayGround</a></li>
+                </ul>
+            </nav>
+        <!-- /Menu Items -->
+        </div>
+        </div>
+    <!-- /Menu -->
+    
+	<!-- body -->
+
+<div id="container">
+<header class="example-header">
+    <h1 class="text-center">...............</h1>
+    <h1>05 | Basic CSS</h1>
+</header>
+<div class="container-fluid">
+<br> 
+<br>
+<h1>Basic CSS</h1>
+<p>
+    Okay, now we've began putting HTML elements on a page. Using our house-building analogy, this is like we have all the materials now in a pile in front of our house. However a pile of lumber does not make a house. We're going to start reasoning about how to put together these things, how to create our blueprints, our plans. CSS is really powerful and can accomplish a wide variety of things: colors, sizes, order, positioning, hiding, showing, animation, etc. We'll scratch the surface here, but know you can do a lot with just CSS. It's a deep subject and a powerful tool. 
+</p><br>
+<p>
+    Like HTML, CSS is not a programming language. It's a list of rules that you give the browser. You'll provide rules to the browser like "all <b> h2</b>s will be colored red." We'll explore why this is different than JavaScript later, but know that's the gist.
+</p>
+<br>
+<h2>Style</h2>
+<p>We'll first explore the most apparent way to use CSS: to effect visual changes on your HTML. Imagine an <b> h2</b> like this:</p>
+<pre style="font-size: 2rem;">&lt;h2&gt;This is h2&lt;/h2&gt;</pre><h2>This is h2</h2><br>
+
+<p>So far so good. What if we wanted to instead make the h2 be red instead? Like this</p>
+<h2 style="color: red;">This is h2</h2>
+<br><p>We're going to write a CSS rule that makes the case. That would look like:</p>
+<pre style="font-size: 2rem;">
+    h2{
+        color: red;
+    }
+</pre><br>
+<p>That's it! There's your first CSS. Let's dissect each piece of this rule:</p>
+
+<ul><!--  <mark></mark> <b></b> -->   
+    <li><p><b>h2</b> — This is what we'd call the <mark>selector</mark>. Anything that matches this selector is going to have everything inside the <mark>{ }</mark> applied to it. These selectors can be a wide variety of things but for now we're just selecting every <mark>h2</mark> on the page. That's important to keep in mind too: it'll apply the changes to everything that matches that selector.
+    </p></li><br>
+
+    <li><p><b>color</b>: – This is called the <mark>property</mark>. There are about <a href="https://meiert.com/en/indices/css-properties/" target="_blank" rel="noopener noreferrer">~350 properties</a> that you can use but to be honest you'll never use all of them. Maybe fifty to a hundred are used frequently and the rest are a long tail that are rarely used. The <mark>color</mark> property affects the color of the font (as well as some other things, but for now just assume it means font color :)</p></li><br>
+
+    <li><p><b>red</b> – This is the <mark>value</mark>. This identifies what the value of the property is going to be. In this case, we're telling the color to be red. There are variety of ways to define color in CSS. This is called using "named color", of which there are about 150 different colors that CSS understands. CSS also understands hex values like <b>#ff0000</b>, rgb values like <b>rgb(255, 0, 0)</b>, and hsl values like <b>hsl(0, 100%, 50%)</b>. All those values I gave in the previous sentence are the same color as <b>red</b>. You don't actually need to understand how these values work to understand web programming or CSS and I would assert most web developers don't.
+    </p></li><br>
+
+    <li><p><mark>&nbsp;; </mark> – Every property-value pair will end in a semicolon. Think of it like a period/full-stop to end of a sentence. This is how the computer knows you're done with that property and moving on.</p></li>
+
+</ul><br>
+<p>So let's go a step further. Let's make our h1 even more different! Let's make it limegreen, bigger, not bold (h1s are by-default bold), underlined, uppercased, and have pink border!</p>
+<br>
+<pre>
+    h2 {
+        color: limegreen;
+        font-size: 60px;
+        font-weight: normal;
+        text-decoration: underline;
+        text-transform: uppercase;
+        border: 3px solid pink;
+      }
+</pre><br>
+<h2 style="color: limegreen;
+            font-size: 60px;
+            font-weight: normal;
+            text-decoration: underline;
+            text-transform: uppercase;
+            border: 3px solid pink;">This is h2</h2>
+<hr>
+<h1>Parents and Children</h1>
+<p>You'll notice that if I have HTML like this:</p>
+<pre style="font-size: 2rem;">&lt;h2&gt;This is h2&lt;/h2&gt;</pre>
+<p>And have CSS look like this:</p>
+<pre style="font-size: 2rem;">
+    h2{
+        color: red;
+    }
+</pre><br>
+<p>The h2 will be colored blue. This is because it has a parent (or ancestor) tag that is a div which means that CSS will still affect it. This even works will large degrees of separation. If I have</p>
+<pre><xmp style="background-color: #212529; color: white; font-weight: 500; font-size: 2.5vh;">
+    <body>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <h2>my h2</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    
+</xmp></pre>
+<p>and my CSS selector is body <mark style="background-color: rgb(242, 119, 119);"> { color: red }</mark> that will affect the <mark>h2</mark> in the middle</p><br><br>
+<h1>CSS PlayGround</h1>
+<div class="main-mirror">
+<textarea id="editor-textarea" onkeyup = "refresh()" style="height: 1300px;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+<style>
+
+h1 {
+    font-family: Helvetica;
+    color: red;
+    font-size: 50px;
+    text-align: right;
+}
+
+h2 {
+    font-family: Monaco;
+    color: seagreen;
+    font-size: 40px;
+    border: 9px dotted gray;
+    text-align: center;
+}
+
+p {
+    font-family: Comic Sans MS;
+    font-size: 30px;
+    background-color: black;
+    color: white;
+}
+
+div {
+    color: blue;
+}
+
+span {
+    color: yellow;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+ol {
+    list-style: upper-roman;
+}
+
+ul {
+    list-style: square;
+}
+
+li {
+    color: brown;
+}
+
+</style>
+</head>
+<body>
+
+<h1>This is the h1</h1>
+<h2>This is the h2</h2>
+<h1>This is another h1</h1>
+<p>This is a paragraph of text. Inside of it I put a <span>span</span> that can be styled differently too. Here's <span>another span</span> too. Some pretty cool stuff.</p>
+<div>
+    <h3>Here's an h3</h3>
+</div>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit facilis vitae necessitatibus, id ratione reprehenderit quam illum ab quibusdam laborum quis et ea voluptates asperiores ex quaerat aliquid esse cumque?</p>
+<ul>
+    <li>List Item 1</li>
+    <li>List Item 2</li>
+    <li>List Item 3</li>
+    <li>List Item 4</li>
+    <li>List Item 5</li>
+</ul>
+<ol>
+    <li>List Item 1</li>
+    <li>List Item 2</li>
+    <li>List Item 3</li>
+    <li>List Item 4</li>
+    <li>List Item 5</li>
+</ol>
+<h2>This is the h2 at the end of the page</h2>
+
+</body>
+</html>
+
+</textarea>
+<iframe id="viewer" style="height: 1300px;"></iframe>
+<br><br>
+
+</div>
+
+
+
+<div class="foot2">
+<a href="./2.html"> << Lesson 02 | The House </a>  
+<a href="./3.html"> >> Lesson 03 | Basic HTML</a>  
+</div>
+
+</div>
+</div>		
+<script src="../JavaScript/jquery-3.6.0.min.js"></script>
+<script src="../JavaScript/app.js"></script>
+</body>
+</html>
