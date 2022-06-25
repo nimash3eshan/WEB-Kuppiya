@@ -10,7 +10,7 @@
     margin: 100px auto;
 }
 
-#container h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
 color: #3D4351;
 margin-top: 0;
 }
@@ -23,7 +23,7 @@ color: #ff9a9a;
 text-decoration: none;
 }
 
-.example-header {
+#container .example-header {
 background: #3D4351;
 color: #FFF;
 font-weight: 300;
