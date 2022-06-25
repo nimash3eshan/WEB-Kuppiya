@@ -25,7 +25,7 @@ p{
     display: inline-flex;
     padding-top: 80px;
 }
-#editor-textarea{
+#editor-textarea,#editor-textarea2,#editor-textarea3,#editor-textarea4,#editor-textarea5,#editor-textarea6,#editor-textarea7,#editor-textarea8,#editor-textarea9,#editor-textarea10{
     width:50%;
     margin: 10px;
     padding: 10px;
@@ -34,7 +34,7 @@ p{
     resize: none;
     font-size: 1.8rem;
 }
-#viewer{
+#viewer,#viewer2,#viewer3,#viewer4,#viewer5,#viewer6,#viewer7,#viewer8,#viewer9,#viewer10{
     background: white;
     border: none;
     width:50%;
@@ -46,10 +46,10 @@ p{
         display: inline-flex;
         flex-direction: column;
     }
-    #editor-textarea {
+    #editor-textarea,#editor-textarea2,#editor-textarea3,#editor-textarea4,#editor-textarea5,#editor-textarea6,#editor-textarea7,#editor-textarea8,#editor-textarea9,#editor-textarea10 {
         width: 100%;
     }
-    #viewer {
+    #viewer,#viewer2,#viewer3,#viewer4,#viewer5,#viewer6,#viewer7,#viewer8,#viewer9,#viewer10 {
         width: 100%;
     }
 }
@@ -195,4 +195,7 @@ mark{
     background: #8cff6d;
     color: black;
     border-radius: 20%;
+}
+hr.hr{
+    border-top: 1px solid rgb(3, 0, 0);
 }

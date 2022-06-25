@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="HTML|CSS|JS KUPPIY">
+    <meta name="author" content="Nimash Eshan">
+		<title>WEB KUPPIYA - CSS Selectors</title>
+		<link rel="stylesheet" href="../styles/normalize.css">
+		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+        <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/content.css">
+	</head>
+	<body onclick = "refresh();refresh2();refresh3();refresh4();refresh5();refresh6();">
+
+    <!--Menu-->
+    <div id="header-nav">
+        <div class="container">
+    <!-- H1 for SEO -->
+        <div class="brand">
+        <a href="#"><h1>WEB කුප්පිය</h1></a>
+        </div>
+        <!-- Small screen menu button -->
+        <a href="#menu" class="menu-link">
+        <span class="bar1"></span>
+        <span class="bar2"></span>
+        <span class="bar3"></span>
+        </a>
+        <!-- /Small screen menu button -->
+        
+        <!-- Menu Items -->
+        <nav id="menu" role="navigation">
+                <ul>
+                    <li><a href="../index.html">Content</a></li>
+                    <li><a href="./Live editor.html">PlayGround</a></li>
+                </ul>
+            </nav>
+        <!-- /Menu Items -->
+        </div>
+        </div>
+    <!-- /Menu -->
+    
+	<!-- body -->
+
+<div id="container">
+<header class="example-header">
+    <h1 class="text-center">...............</h1>
+    <h1>06 | CSS Hard Parts</h1>
+</header>
+<div class="container-fluid">
+<br> 
+<br>
+<h1>Meta HTML</h1>
+<p>
+    Before this section, you learned how to make CSS rules to affect how your webpage looks. We showed you how to make a CSS rule so that you can make every p on the page have green text instead of black which is amazing. However, as you start building bigger websites, you begin to have more complicated needs: you may need this p to have green text and that p to have red text. We haven't shown you yet how to make two of the same tag be styled different. Let's start showing you how to do this so you can achieve things like this:
+</p><br>
+<p style="color: red;">This is a red p.</p><p style="color: green;">This is a green p.</p>
+<br><p><!-- <mark></mark> <b></b> -->   
+    So how do we achieve this black magic? We're going to use that now. Classes allow us to style the same <mark>tags</mark> (e.g. p, div, span, etc.) differently because we can select the class instead of the tag. This is where having useful class names helps. So now, if we have an h1 that's the title of a blog post and an h1 that's the branding logo at the top, we can do this
+</p>
+<pre><xmp style="background-color: #212529; color: white; font-weight: 500; font-size: 2.5vh;">
+    <h1 class="branding">Faculty of IT UOM</h1>
+    <!-- other htmls … these don't have to be sibiling tags -->
+    <h1 class="blog-post-title">L Canteen</h1>
+    
+</xmp></pre>
+<p>We can CSS to address these two differently. Like so:</p>
+
+<div class="main-mirror" style="padding-top: 5px;">
+<textarea id="editor-textarea" onkeyup = "refresh()" style="height: 330px;">
+<style>
+.branding {
+    color: red;
+}
+
+.blog-post-title {
+    color: limegreen;
+}
+</style>
+<h1 class="branding">Faculty of IT UOM</h1>
+<h1 class="blog-post-title">L Canteen</h1>
+</textarea>
+<iframe id="viewer" style="height: 330px; float: none;"></iframe>
+</div> <!--main mirror-->
+
+<br><br><br>
+<p>In the CSS, notice the . (period) before the class name. This is how you differentiate between a tag name (like h1) and a class name (like "branding".)</p>
+<p>So what should you use, generally speaking. Classes. Almost always classes. This is the consensus in the front end development community. Classes are the best way to style web pages. There are rare occasions that it may be useful style on tags (like if you literally want to style every a tag on the page) but those cases are rare. Use classes. Err on the side of using classes too much.</p>
+<br><hr class="hr">
+<h1>The Cascade</h1>
+<p> This is the part where CSS can become unnecessarily complicated, even if the ability to use the cascade is occasionally useful. Before we dive in, avoid using this ability of CSS where-ever possible. It'll save you hours-and-hours of debugging, I promise.</p>
+<p>So, the cascade. What if you have two CSS classes that have conflicting properties? Which one "wins" and is applied? Let's see an example. Guess what will be the color of <b>h1</b>? <mark> red or green? </mark></p>
+
+<div class="main-mirror" style="padding-top: 5px;">
+    <textarea id="editor-textarea2" onkeyup = "refresh2()" style="height: 330px;">
+    <style>
+        .title {
+            color: red;
+        }
+        
+        .title {
+            color: green;
+        }
+    </style>
+    <h1 class="title">7 days to Exam</h1>
+    </textarea>
+    <iframe id="viewer2" style="height: 330px; float: none;"></iframe>
+</div> <!--main mirror-->
+<br><p>
+    In this one, we have two rules with the same class (which is "legal" CSS.) So which one gets applied? Since they're equal, the one that comes last wins. So in this case, the h1 would be green. So remember that rule (we'll recap at the end): when everything is equal, the last one gets applied. It'd work the same if we had two <b>h1</b>  selectors as well.
+</p><hr class="hr">
+<br><h1>IDs and !important</h1>
+<p>The next two I'm going to show you should nearly never use. These are wrecking balls when most problems require carpenter's hammers. I show you because a lot of tutorials online and existing code has them in there. So please, refrain from using these tools unless you have good reason (there are some problems that do require wrecking balls :)</p>
+
+<div class="main-mirror" style="padding-top: 5px;">
+    <textarea id="editor-textarea3" onkeyup = "refresh3()" style="height: 400px;">
+    <style type="text/css">
+        #site-brand {
+            color: red;
+        }
+        
+        h1.nav-head.nav-main.other-useful-class {
+            /*
+            * this class is way too specific; never have a class selector so long
+            * it's ridiculous and just to illustrate a point
+            */
+            color: green;
+        }
+    </style>
+    <h1 id="site-brand" class="nav-head nav-main other-useful-class">The Brand of my Website</h1>
+    </textarea>
+    <iframe id="viewer3" style="height: 400px; float: none;"></iframe>
+</div> <!--main mirror-->
+
+<br>
+<p>You would think by how long the second class is, it'd win. Not the case. ID selectors <mark>(#site-brand)</mark> win over class selectors. If tags are the one place and classes are the tens place, then IDs are the hundred place. Using that, the first one is 100 and the second is 31. Again, keep in mind this is just useful for a quick device to look at specificity. Still one ID is greater than ten classes.</p>
+<p>Do you want to wreck the wrecking ball? Using the previous HTML, look at this CSS:</p>
+
+<div class="main-mirror" style="padding-top: 5px;">
+    <textarea id="editor-textarea4" onkeyup = "refresh4()" style="height: 400px;">
+    <style>
+        #site-brand-2 {
+            color: red;
+            border: 1px solid red;
+        }
+        
+        .nav-head-2 {
+            color: green !important;
+            border: 1px solid green;
+        }
+    </style>
+    <h1 id="site-brand-2" class="nav-head-2 nav-main-2 other-useful-class-2">The Brand of my Website</h1>
+    </textarea>
+    <iframe id="viewer4" style="height: 400px; float: none;"></iframe>
+</div> <!--main mirror-->
+
+<p>Rekt. The h1's color is going to be green but the border is going to be red. This is a terrible idea. Never use <mark>!important</mark>. As you can see, it's gets messy quickly and it makes the logic really tough to follow even for experienced devs.</p>
+<hr class="hr">
+<br><h1>Pseudoclasses</h1>
+<p>Some times we want to change how elements look based on certain events that happen in the DOM. One of the most common ones is we want to change an element when someone hovers their mouse over it. Like this box:</p>
+<p>The see we used for this is this:</p>
+
+<div class="main-mirror" style="padding-top: 5px;">
+    <textarea id="editor-textarea5" onkeyup = "refresh5()" style="height: 400px;">
+    <style>
+        .hover-example {
+            width: 250px;
+            height: 100px;
+            background-color: limegreen;
+            color: white;
+        }
+        .hover-example:hover {
+            background-color: crimson;
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+    <div class="hover-example">Hover your mouse over me</div>
+    </textarea>
+    <iframe id="viewer5" style="height: 400px; float: none;"></iframe>
+</div> <!--main mirror--> <br><br>
+<p>The :hover part selects that element only when that condition is true. There are are many CSS pseudo classes like being able to only select the first element of something like this:</p>
+
+<div class="main-mirror" style="padding-top: 5px;">
+    <textarea id="editor-textarea6" onkeyup = "refresh6()" style="height: 400px;">
+    <style>
+        .first-child-example {
+            color: crimson;
+        }
+        .first-child-example:first-child {
+            color: limegreen;
+        }
+    </style>
+    <ol>
+    <li class="first-child-example">First</li>
+    <li class="first-child-example">Second</li>
+    <li class="first-child-example">Third</li>
+        </ol>
+    </textarea>
+<iframe id="viewer6" style="height: 400px; float: none;"></iframe>
+</div> <!--main mirror--> <br>
+<hr class="hr"><br>
+<p>There are so many CSS hard parts available including,</p>
+<ul>
+    <li><p>Pseudoelements (::before and ::after)</p></li>
+    <li><p>CSS Layouts</p></li>
+    <li><p>Box Models</p></li>
+    <li><p>Padding & Margin</p></li>
+    <li><p>Dev Tools</p></li>
+    <li><p>Z-index</p></li>
+    <li><p>Transform & Transitions</p></li>
+    <li><p>Responsive and Fluid Layouts</p></li>
+    <li><p>Scrolling and Parralex</p></li>
+    <li><p>CSS Animation</p></li>
+</ul>  
+<p>🤕 I've been creating so many HTML codes and dealing with so many stupid errors that I'm exhausted. I promise that I will discuss these topics in a zoom meeting session and update the website later.</p><br><br>
+
+</div> <!--container-fluid--> <b></b>
+
+<div class="foot2">
+    <a href="./2.html"> << Lesson 03 | Basic HTML</a>  
+    <a href="./3.html"> >> Lesson 04 | Meta HTML</a>  
+</div>		
+
+<script src="../JavaScript/jquery-3.6.0.min.js"></script>
+<script src="../JavaScript/app.js"></script>
+</body>
+</html>

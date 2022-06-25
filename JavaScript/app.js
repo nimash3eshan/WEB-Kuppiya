@@ -16,6 +16,26 @@ function refresh(){
   var textContent = document.getElementById('editor-textarea').value; 
   document.getElementById('viewer').srcdoc = textContent;
 }
+function refresh2(){
+  var textContent = document.getElementById('editor-textarea2').value; 
+  document.getElementById('viewer2').srcdoc = textContent;
+}
+function refresh3(){
+  var textContent = document.getElementById('editor-textarea3').value; 
+  document.getElementById('viewer3').srcdoc = textContent;
+}
+function refresh4(){
+  var textContent = document.getElementById('editor-textarea4').value; 
+  document.getElementById('viewer4').srcdoc = textContent;
+}
+function refresh5(){
+  var textContent = document.getElementById('editor-textarea5').value; 
+  document.getElementById('viewer5').srcdoc = textContent;
+}
+function refresh6(){
+  var textContent = document.getElementById('editor-textarea6').value; 
+  document.getElementById('viewer6').srcdoc = textContent;
+}
 
 $(document).ready(function() {
   // On click show menu on small screen
